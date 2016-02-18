@@ -1,13 +1,12 @@
 package ca.bcit.comp2526.a1c.a1b;
 
-import static java.io.File.separator;
+import images.ResourceLoader;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -17,6 +16,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+
 
 /**
  * Graphic User Interface.
@@ -28,9 +29,7 @@ import javax.swing.JPanel;
 public class Gui extends JFrame implements UserInterface {
     private AddressBook addressBook;// interface to database
     private int choice;// users choice 1-5
-    private Image bg = Toolkit.getDefaultToolkit().createImage("src" + separator + "ca"
-            + separator + "bcit" + separator + "comp2526" + separator + "a1c"
-            + separator + "a1b" + separator + "bg.jpg"); //The Background Image
+    private Image bg = ResourceLoader.getImage("bg.jpg"); //The Background Image
     private JPanel menu;
     private JButton addb;
     private JButton delb;
@@ -137,6 +136,7 @@ public class Gui extends JFrame implements UserInterface {
             exitb.setFocusable(false);
             add(exitb);
             exitb.addActionListener(new ButtonListener());
+            revalidate();
         }
         
         /**

@@ -1,13 +1,12 @@
 package ca.bcit.comp2526.a1c.a1a;
 
-import static java.io.File.separator;
+import images.ResourceLoader;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -28,9 +27,7 @@ import javax.swing.JPanel;
 public class Gui extends JFrame {
     private Main main;// interface to main
     private int choice;// users choice 1-5
-    private Image bg = Toolkit.getDefaultToolkit().createImage("src" + separator + "ca"
-            + separator + "bcit" + separator + "comp2526" + separator + "a1c"
-            + separator + "a1a" + separator + "bg.jpg"); //The Background Image
+    private Image bg = ResourceLoader.getImage("bg.jpg"); //The Background Image
     private JPanel menu;
     private JButton addb;
     private JButton delb;
